@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700;900&family=Silkscreen:wght@400;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", sans-serif;
+  --font-digital: "Silkscreen", cursive;
+  
+  --color-lagom-sky: #5BC0EB;
+  --color-lagom-green: #2D5A27;
+  --color-lagom-yellow: #F9D423;
+  --color-lagom-red: #E23E28;
+  --color-lagom-ink: #1A1A1A;
+  --color-lagom-white: #FFFFFF;
+}
+
+body {
+  background-color: var(--color-lagom-white);
+  color: var(--color-lagom-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.brutal-card {
+  background: white;
+  border: 4px solid var(--color-lagom-ink);
+  box-shadow: 8px 8px 0px 0px var(--color-lagom-ink);
+  transition: all 0.2s ease;
+}
+
+.brutal-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px 0px var(--color-lagom-ink);
+}
+
+.brutal-btn {
+  background: var(--color-lagom-yellow);
+  border: 4px solid var(--color-lagom-ink);
+  box-shadow: 4px 4px 0px 0px var(--color-lagom-ink);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.1s ease;
+}
+
+.brutal-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--color-lagom-ink);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.bg-dots-green {
+  background-color: white;
+  background-image: radial-gradient(var(--color-lagom-green) 85%, transparent 87%);
+  background-size: 12px 12px;
+}
+
+.bg-grid-green {
+  background-color: var(--color-lagom-green);
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-lines-green {
+  background-color: var(--color-lagom-green);
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+}
