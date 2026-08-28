@@ -20,12 +20,13 @@ const BRANDS = [
     link: "https://www.etsy.com/shop/NAUMOO"
   },
   {
-    name: "UPCOMING",
-    category: "Lifestyle",
-    description: "A new brand redefining the maximalist lifestyle",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop",
+    name: "GLOOP",
+    category: "Accessories & Lifestyle",
+    description: "We reimagine everyday objects people love to use, display, and share",
+    image: "https://cdn.shopify.com/s/files/1/0867/7913/4145/files/passing-milkshake-gravity-bong-hero-mobile-banner.jpg?v=1786200970",
     color: "bg-lagom-sky",
-    link: "#"
+    link: "https://heygloop.com/",
+//    isUpcoming: true
   },
 ];
 
@@ -274,9 +275,9 @@ const Brands = () => {
                 src={brand.image} 
                 alt={brand.name}
                 referrerPolicy="no-referrer"
-                className={`w-full h-full object-cover mix-blend-multiply opacity-80 hover:opacity-100 transition-opacity ${brand.name === "UPCOMING" ? "blur-md" : ""}`}
+                className={`w-full h-full object-cover mix-blend-multiply opacity-80 hover:opacity-100 transition-opacity ${brand.isUpcoming ? "blur-md" : ""}`}
               />
-              {brand.name === "UPCOMING" && (
+              {brand.isUpcoming && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="bg-white border-4 border-lagom-ink px-4 py-2 font-digital text-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                     UPCOMING
@@ -297,8 +298,8 @@ const Brands = () => {
               href={brand.link} 
               target={brand.link.startsWith('http') ? "_blank" : "_self"}
               rel="noopener noreferrer"
-              className={`brutal-btn w-full py-4 flex items-center justify-center space-x-2 ${brand.name === "UPCOMING" ? "opacity-50 cursor-not-allowed" : ""}`}
-              onClick={(e) => brand.name === "UPCOMING" && e.preventDefault()}
+              className={`brutal-btn w-full py-4 flex items-center justify-center space-x-2 ${brand.isUpcoming ? "opacity-50 cursor-not-allowed" : ""}`}
+              onClick={(e) => brand.isUpcoming && e.preventDefault()}
             >
               <span>EXPLORE</span>
               <ArrowRight size={20} />
@@ -344,11 +345,25 @@ const Philosophy = () => {
 const Careers = () => {
   const jobs = [
     { 
-      title: "Creative Editor", 
+      title: "Social Media Strategist", 
       location: "DTLA", 
       type: "Full-time Onsite", 
       color: "bg-lagom-yellow",
-      link: "https://www.linkedin.com/jobs/view/4411346333/" 
+      link: "https://www.linkedin.com/jobs/view/4458353278/" 
+    },
+    { 
+      title: "Social Media Marketing Specialist", 
+      location: "DTLA", 
+      type: "Full-time Onsite", 
+      color: "bg-lagom-yellow",
+      link: "https://www.linkedin.com/jobs/view/4454464299/" 
+    },
+    { 
+      title: "Assistant Content Coordinator", 
+      location: "DTLA", 
+      type: "Full-time Onsite", 
+      color: "bg-lagom-yellow",
+      link: "https://www.linkedin.com/jobs/view/4452722902/" 
     },
   ];
 
