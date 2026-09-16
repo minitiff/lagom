@@ -2,7 +2,17 @@ import { motion } from "motion/react";
 import { ArrowRight, Instagram, Linkedin, Mail, Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
-const BRANDS = [
+interface BrandItem {
+  name: string;
+  category: string;
+  description: string;
+  image: string;
+  color: string;
+  link: string;
+  isUpcoming?: boolean;
+}
+
+const BRANDS: BrandItem[] = [
   {
     name: "WEDAY",
     category: "Accessories & Lifestyle",
@@ -35,7 +45,7 @@ const Nav = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center bg-white border-b-4 border-lagom-ink">
-      <div className="text-3xl font-black tracking-tighter">LAGOM</div>
+      <div className="text-3xl font-black tracking-tighter">YLT7</div>
       
       <div className="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-black">
         <a href="#brands" className="hover:text-lagom-red transition-colors">Portfolio</a>
@@ -224,7 +234,7 @@ const Hero = () => {
         className="text-center z-10 bg-white/95 backdrop-blur-md border-4 md:border-8 border-lagom-ink p-8 md:p-24 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] w-full max-w-[90vw] md:max-w-none"
       >
         <h1 className="text-[14vw] md:text-[12vw] leading-none mb-6 font-digital whitespace-nowrap">
-          LAGOM
+          YLT7
         </h1>
         
         <motion.p 
@@ -242,9 +252,17 @@ const Hero = () => {
         transition={{ duration: 2, repeat: Infinity }}
         className="absolute bottom-12 z-10"
       >
-        <div className="brutal-btn p-4 rounded-full">
+        <a 
+          href="#brands"
+          aria-label="Scroll to portfolio"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('brands')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className="brutal-btn p-4 rounded-full flex items-center justify-center cursor-pointer"
+        >
           <ChevronDown size={32} />
-        </div>
+        </a>
       </motion.div>
     </section>
   );
@@ -324,7 +342,7 @@ const Philosophy = () => {
           </div>
           
           <div className="bg-white border-4 md:border-8 border-lagom-ink p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] rotate-0 md:-rotate-1">
-            <span className="text-xs uppercase tracking-[0.3em] md:tracking-[0.5em] mb-6 block font-black text-lagom-green">THE LAGOM WAY</span>
+            <span className="text-xs uppercase tracking-[0.3em] md:tracking-[0.5em] mb-6 block font-black text-lagom-green">THE YLT7 WAY</span>
             <h2 className="text-4xl md:text-6xl lg:text-7xl mb-8 font-digital">The BALANCE</h2>
             <div className="space-y-6 text-sm md:text-lg font-bold leading-tight">
               <p>
@@ -345,32 +363,32 @@ const Philosophy = () => {
 const Careers = () => {
   const jobs = [
     { 
-      title: "Social Media Strategist", 
+      title: "Social Media Marketing Assistant", 
       location: "DTLA", 
       type: "Full-time Onsite", 
       color: "bg-lagom-yellow",
-      link: "https://www.linkedin.com/jobs/view/4458353278/" 
+      link: "https://www.linkedin.com/jobs/view/4466599357/" 
     },
     { 
-      title: "Social Media Marketing Specialist", 
+      title: "Junior Social Media Marketing Specialist", 
       location: "DTLA", 
       type: "Full-time Onsite", 
       color: "bg-lagom-yellow",
-      link: "https://www.linkedin.com/jobs/view/4454464299/" 
+      link: "https://www.linkedin.com/jobs/view/4464888634/" 
     },
     { 
-      title: "Assistant Content Coordinator", 
+      title: "Junior Growth Marketing Specialist", 
       location: "DTLA", 
       type: "Full-time Onsite", 
       color: "bg-lagom-yellow",
-      link: "https://www.linkedin.com/jobs/view/4452722902/" 
+      link: "https://www.linkedin.com/jobs/view/4464565650/" 
     },
   ];
 
   const benefits = [
     { title: "RETIREMENT PLAN", desc: "SECURE YOUR FUTURE WITH OUR RETIREMENT SAVINGS PLAN." },
     { title: "HEALTH CARE", desc: "COMPREHENSIVE HEALTH INSURANCE INCLUDING DENTAL AND VISION." },
-    { title: "EMPLOYEE DISCOUNT", desc: "GENEROUS DISCOUNTS ON ALL LAGOM LIVING BRANDS." },
+    { title: "EMPLOYEE DISCOUNT", desc: "GENEROUS DISCOUNTS ON ALL YLT7 BRANDS." },
     { title: "COMMISSION & INCENTIVE", desc: "REWARDING PERFORMANCE WITH COMPETITIVE COMMISSION STRUCTURES." },
   ];
 
@@ -515,17 +533,17 @@ const Footer = () => {
   return (
     <footer className="py-12 px-8 border-t-8 border-lagom-ink bg-white">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div className="text-4xl font-black tracking-tighter">LAGOM</div>
+        <div className="text-4xl font-black tracking-tighter">YLT7</div>
         
         <div className="flex space-x-8 text-[10px] uppercase tracking-widest font-black">
-          <span>&copy; 2026 LAGOM HOLDING CO.</span>
+          <span>&copy; 2026 YLT7 HOLDING CO.</span>
           <a href="#" className="hover:text-lagom-red">Privacy</a>
           <a href="#" className="hover:text-lagom-green">Terms</a>
         </div>
         
         <div className="flex space-x-6">
           <a 
-            href="https://www.linkedin.com/company/lagom-living/" 
+            href="https://www.linkedin.com/company/ylt7/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="brutal-btn p-2 rounded-full bg-white hover:bg-lagom-sky transition-colors"
